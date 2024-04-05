@@ -1,0 +1,57 @@
+CheckLogin As screen:
+    LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
+    OnVisible: =If(!VarDevMode,Select(Button1))
+
+    Button1 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(73, 130, 5, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+        OnSelect: |-
+            =UpdateContext({LoadingComponent: true});
+            If(
+                LookUp(
+                    User,
+                    User.Email = User().Email
+                ).User.Email = User().Email,
+                Set(VarUserRole,LookUp(User, User.Email = User().Email).Role.Value);
+                Set(VarUserEmail,User().Email);
+                Navigate(HomeList);
+                UpdateContext({LoadingComponent: false});
+                ,
+                Navigate(BugScreen);
+                Set(
+                    ErrorText,
+                    Text(User().FullName) & " ไม่มีชื่ออยู่ในระบบกรุณาติดต่อผู้ดูแลระบบ"
+                );
+                UpdateContext({LoadingComponent: false});
+            )
+        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: |-
+            ="Login
+            "
+        Visible: =false
+        X: =612
+        Y: =568
+        ZIndex: =1
+
+    Loading_1 As Loading:
+        Height: =Parent.Height
+        Visible: =LoadingComponent
+        Width: =Parent.Width
+        ZIndex: =2
+

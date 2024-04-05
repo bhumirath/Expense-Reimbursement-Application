@@ -1,0 +1,23 @@
+App As appinfo:
+    BackEnabled: =true
+    Formulas: |
+        =AppVersion = "24.01.04.1718";
+    OnStart: |-
+        =Set(
+            varCurrentDate,
+            Date(
+                Year(Today()),
+                Month(Today()),
+                1
+            )
+        );
+        Set(varWorkDate,Today())
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

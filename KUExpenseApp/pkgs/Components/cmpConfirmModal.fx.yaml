@@ -1,0 +1,135 @@
+cmpConfirmModal As CanvasComponent:
+    BorderRadius: =30
+    BoxFill: =Color.White
+    Color: =Color.Navy
+    Fill: =RGBA(0, 0, 0, 0.6)
+    FontSize: =Switch(App.ActiveScreen.Size,1,22,2,24,26)
+    Height: =App.Height
+    LeftBtnText: ="Text"
+    OnCancel: =true
+    OnConfirm: =true
+    RightBtnText: ="Text"
+    Subtitle: ="[Subtitle]"
+    Title: ="[Text]"
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container1_2 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =Color.White
+        Height: =400
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        RadiusBottomLeft: =cmpConfirmModal.BorderRadius
+        RadiusBottomRight: =cmpConfirmModal.BorderRadius
+        RadiusTopLeft: =cmpConfirmModal.BorderRadius
+        RadiusTopRight: =cmpConfirmModal.BorderRadius
+        Width: =Min(Parent.Width * 0.9,800)
+        X: =(Parent.Width - Self.Width)/2
+        Y: =(Parent.Height - Self.Height)/2
+        ZIndex: =2
+
+        Label1_2 As label:
+            Align: =Align.Center
+            AlignInContainer: =AlignInContainer.Stretch
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =cmpConfirmModal.Color
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =100
+            Size: =cmpConfirmModal.FontSize
+            Text: =cmpConfirmModal.Title
+            Width: =560
+            ZIndex: =1
+
+        Label1_3 As label:
+            Align: =Align.Center
+            AlignInContainer: =AlignInContainer.Stretch
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FillPortions: =1
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =100
+            Size: =cmpConfirmModal.FontSize - 2
+            Text: =cmpConfirmModal.Subtitle
+            Width: =560
+            ZIndex: =2
+
+        Container2_2 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =80
+            LayoutGap: =10
+            LayoutMinHeight: =80
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            ZIndex: =3
+
+            Button2_3 As button:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =Color.White
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =cmpConfirmModal.Color
+                FillPortions: =1
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                HoverColor: =ColorFade(Self.Color,-20%)
+                HoverFill: =ColorFade(Self.Fill, -20%)
+                LayoutMinHeight: =70
+                LayoutMinWidth: =100
+                OnSelect: =cmpConfirmModal.OnConfirm()
+                PressedColor: =ColorFade(Self.Color,-30%)
+                PressedFill: =ColorFade(Self.Fill, -30%)
+                RadiusBottomLeft: =cmpConfirmModal.BorderRadius
+                RadiusBottomRight: =cmpConfirmModal.BorderRadius
+                RadiusTopLeft: =cmpConfirmModal.BorderRadius
+                RadiusTopRight: =cmpConfirmModal.BorderRadius
+                Size: =24
+                Text: =cmpConfirmModal.LeftBtnText
+                Width: =280
+                ZIndex: =1
+
+            Button2_4 As button:
+                AlignInContainer: =AlignInContainer.Stretch
+                BorderColor: =Self.Color
+                Color: =cmpConfirmModal.Color
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =Color.Transparent
+                Fill: =Color.Transparent
+                FillPortions: =1
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                HoverBorderColor: =Self.HoverColor
+                HoverColor: =ColorFade(Self.Color,-20%)
+                HoverFill: =Color.Transparent
+                LayoutMinHeight: =70
+                LayoutMinWidth: =100
+                OnSelect: =cmpConfirmModal.OnCancel()
+                PressedBorderColor: =Self.PressedColor
+                PressedColor: =ColorFade(Self.Color,-30%)
+                PressedFill: =Color.Transparent
+                RadiusBottomLeft: =cmpConfirmModal.BorderRadius
+                RadiusBottomRight: =cmpConfirmModal.BorderRadius
+                RadiusTopLeft: =cmpConfirmModal.BorderRadius
+                RadiusTopRight: =cmpConfirmModal.BorderRadius
+                Size: =24
+                Text: =cmpConfirmModal.RightBtnText
+                Width: =280
+                ZIndex: =2
+

@@ -1,0 +1,64 @@
+cmpFloatingBtn As CanvasComponent:
+    OnSelect():
+        ThisProperty:
+            Default: =true
+    Background: =Color.DeepPink
+    Color: =Color.White
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =80
+    Icon: =Icon.Add
+    SizeMultiplier: =1
+    Width: =80
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container3_2 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Height: =btnFloat.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =btnFloat.RadiusBottomLeft
+        RadiusBottomRight: =btnFloat.RadiusBottomRight
+        RadiusTopLeft: =btnFloat.RadiusTopLeft
+        RadiusTopRight: =btnFloat.RadiusTopRight
+        Width: =btnFloat.Width
+        X: =btnFloat.X
+        Y: =btnFloat.Y
+        ZIndex: =1
+
+    btnFloat As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =cmpFloatingBtn.Background
+        Fill: =cmpFloatingBtn.Background
+        FontWeight: =FontWeight.Semibold
+        Height: =Parent.Width
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(cmpFloatingBtn.Background,-15%)
+        OnSelect: =cmpFloatingBtn.OnSelect()
+        PressedFill: =ColorFade(cmpFloatingBtn.Background,-35%)
+        RadiusBottomLeft: =Self.Height
+        RadiusBottomRight: =Self.Height
+        RadiusTopLeft: =Self.Height
+        RadiusTopRight: =Self.Height
+        Size: =24
+        Text: =""
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Icon1_2 As icon.Add:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =cmpFloatingBtn.Color
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =Self.Width
+        Icon: =cmpFloatingBtn.Icon
+        OnSelect: =cmpFloatingBtn.OnSelect()
+        Width: =Parent.Width * 0.8 * cmpFloatingBtn.SizeMultiplier
+        X: =(Parent.Width - Self.Width)/2
+        Y: =(Parent.Width - Self.Width)/2
+        ZIndex: =3
+

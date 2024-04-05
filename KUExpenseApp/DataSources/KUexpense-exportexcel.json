@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "96536619-6603-4e91-8f6d-759676b687d3",
+    "Name": "KUexpense-exportexcel",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "5486b476-7ddb-ee11-904c-000d3aa01f80"
+  }
+]
