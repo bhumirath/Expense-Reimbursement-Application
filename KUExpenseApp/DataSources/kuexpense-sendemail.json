@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "55ccc3fd-d6fa-4950-8ca3-4d79fcdccde4",
+    "Name": "kuexpense-sendemail",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "2dceae89-8ddb-ee11-904c-000d3aa01f80"
+  }
+]

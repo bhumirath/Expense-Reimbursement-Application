@@ -1,0 +1,1161 @@
+HomeList As screen:
+    LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
+    OnVisible: |-
+        =UpdateContext({showFilter:false});Select(btnCheckScreen)
+
+    Container1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(66, 66, 66, 1)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Container2 As groupContainer.verticalAutoLayoutContainer:
+            Fill: =RGBA(3, 169, 107, 1)
+            FillPortions: =0
+            Height: =120
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =Parent.Width
+            ZIndex: =1
+
+            Icon1 As icon.Hamburger:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =40
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.Hamburger
+                OnSelect: |-
+                    =UpdateContext({varHumbergerMenu:true});
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =50
+                ZIndex: =1
+
+            Image3_3 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: ='600px-KU_SubLogo_Thai'
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                ZIndex: =2
+
+            Label5 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FillPortions: =1
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                PaddingLeft: =40
+                Size: =15
+                Text: ="ระบบเบิกค่าใช้จ่าย มหาวิทยาลัยเกษตรศาสตร์"
+                ZIndex: =3
+
+            Container3 As groupContainer.verticalAutoLayoutContainer:
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =50
+                LayoutMinWidth: =50
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =0
+                ZIndex: =4
+
+                lblEmailUserLogin_21 As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Size: =10
+                    Text: =VarUserEmail
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                lblAppVersion_21 As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Height: =44
+                    Size: =10
+                    Text: |-
+                        ="UserRole : " & VarUserRole & "" & " | " & "Version " & AppVersion
+                    Width: =Parent.Width
+                    Y: =40
+                    ZIndex: =2
+
+        Container4 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =100
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+            Label1 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(3, 169, 107, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FillPortions: =1
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                Size: =15
+                Text: ="รายการเบิกค่าใช้จ่าย"
+                Width: =100
+                ZIndex: =1
+
+            Container5 As groupContainer.horizontalAutoLayoutContainer:
+                LayoutMinHeight: =50
+                LayoutMinWidth: =0
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =3
+
+            Container27 As groupContainer.verticalAutoLayoutContainer:
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =5
+
+                Label6 As label:
+                    AlignInContainer: =AlignInContainer.Start
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Size: =13
+                    Text: ="ค้นหารายการเบิกค่าใช้จ่าย"
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                Container10 As groupContainer.manualLayoutContainer:
+                    FillPortions: =0
+                    Height: =50
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =2
+
+                    TextInput1 As text:
+                        BorderColor: =RGBA(73, 130, 5, 1)
+                        Color: =RGBA(51, 51, 51, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="กรอกคำค้นหา"
+                        HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PaddingLeft: =5
+                        PressedBorderColor: =RGBA(73, 130, 5, 1)
+                        PressedColor: =RGBA(51, 51, 51, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        Width: =Parent.Width - 150
+                        ZIndex: =1
+
+                    Icon9 As icon.Search:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        Color: =RGBA(73, 130, 5, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =30
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Search
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =50
+                        X: =TextInput1.Width - 50
+                        Y: =5
+                        ZIndex: =2
+
+        Container11 As groupContainer.horizontalAutoLayoutContainer:
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =500
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =Parent.Width
+            ZIndex: =4
+
+            Container26 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                FillPortions: =0
+                Height: =75
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutGap: =10
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: |
+                    =Parent.Width - 300
+                ZIndex: =1
+
+                Label1_8 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(3, 169, 107, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =15
+                    Text: ="วันนี้ทั้งหมด (ทั้งหมด " & CountRows(Gallery1.AllItems) & " รายการ)" 
+                    Width: =100
+                    ZIndex: =1
+
+                Label1_10 As label:
+                    Align: =Align.Right
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(3, 169, 107, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =15
+                    Text: ="ตัวกรองรายการ"
+                    ZIndex: =2
+
+                Icon8 As icon.FilterFlat:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Color: =RGBA(3, 169, 107, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(220, 220, 220, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =35
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Filter
+                    OnSelect: |-
+                        =If(showFilter = false,UpdateContext({showFilter:true}),UpdateContext({showFilter:false}))
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =40
+                    ZIndex: =3
+
+                ComboBox3 As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayFields: =["Value"]
+                    Font: =Font.'Segoe UI'
+                    HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: ="ชนิดการเบิก"
+                    Items: =Choices([@ExpenseList].ExpenseType)
+                    PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(73, 130, 5, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =Choices(ExpenseList.ExpenseType,ComboBox3.SearchText)
+                    SelectionFill: =RGBA(73, 130, 5, 1)
+                    SelectMultiple: =false
+                    Size: =13
+                    Visible: =showFilter
+                    Width: =200
+                    ZIndex: =4
+
+                ComboBox3_1 As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayFields: =["Value"]
+                    Font: =Font.'Segoe UI'
+                    HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: ="ช่องทางการชำระ"
+                    Items: =Choices([@ExpenseList].BenefitGroup)
+                    PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(73, 130, 5, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =Choices(ExpenseList.BenefitGroup,ComboBox3_1.SearchText)
+                    SelectionFill: =RGBA(73, 130, 5, 1)
+                    SelectMultiple: =false
+                    Size: =13
+                    Visible: =showFilter
+                    Width: =200
+                    ZIndex: =5
+
+                Icon10 As icon.Reload:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Color: =RGBA(3, 169, 107, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(220, 220, 220, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =35
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Reload
+                    OnSelect: =Refresh(ExpenseList)
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =40
+                    ZIndex: =6
+
+            Container10_1 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(3, 169, 107, 1)
+                FillPortions: =0
+                Height: =50
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.End
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =Parent.Width - 300
+                ZIndex: =2
+
+                Label3 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="หมายเลขเอกสาร"
+                    ZIndex: =1
+
+                Label3_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="สถานะเอกสาร"
+                    ZIndex: =2
+
+                Label3_2 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="วันที่ทำรายการ"
+                    ZIndex: =3
+
+                Label3_3 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="จำนวนเงิน"
+                    ZIndex: =4
+
+                Label3_4 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="ช่องทางการชำระ"
+                    ZIndex: =5
+
+                Label3_5 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="รายละเอียดการเบิก"
+                    ZIndex: =6
+
+                Container16 As groupContainer.verticalAutoLayoutContainer:
+                    FillPortions: =0
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =40
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =30
+                    ZIndex: =7
+
+            Container24 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =Parent.Width - 300
+                ZIndex: =3
+
+                Container25 As groupContainer.verticalAutoLayoutContainer:
+                    Height: =100
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =350
+                    ZIndex: =1
+
+                    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        DelayItemLoading: =true
+                        Height: =150
+                        Items: =Filter(ExpenseList,Text(Created,"dd/mm/yyyy") in Text(Today(),"dd/mm/yyyy"),(VarUserRole <> "HR" And User().Email = 'Created By'.Email) Or VarUserRole = "HR",ExpenseType.Value = ComboBox3.Selected.Value Or IsBlank(ComboBox3.Selected.Value),BenefitGroup.Value = ComboBox3_1.Selected.Value Or IsBlank(ComboBox3_1.Selected.Value),DocumentStatus.Value <> "Complete")
+                        Layout: =Layout.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =100
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =50
+                        ZIndex: =1
+
+                        Container12 As groupContainer.horizontalAutoLayoutContainer:
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Height: =Parent.TemplateHeight
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                            Label4 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                Size: =10
+                                Text: =ThisItem.DocNo
+                                ZIndex: =1
+
+                            Label4_1 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                Size: =10
+                                Text: =ThisItem.DocumentStatus.Value
+                                ZIndex: =2
+
+                            Label4_2 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                Size: =10
+                                Text: |-
+                                    =Text(ThisItem.Created,"dd/mm/yyyy hh:ss:mm น.")
+                                ZIndex: =3
+
+                            Label4_3 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                Size: =10
+                                Text: |-
+                                    =Text(ThisItem.Amount, "#,##")
+                                ZIndex: =4
+
+                            Label4_4 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                Size: =10
+                                Text: =ThisItem.BenefitGroup.Value
+                                ZIndex: =5
+
+                            Label4_5 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                Size: =10
+                                Text: =ThisItem.Comment
+                                ZIndex: =6
+
+                            Icon3 As icon.Edit:
+                                BorderColor: =RGBA(166, 166, 166, 1)
+                                Color: =RGBA(73, 130, 5, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(220, 220, 220, 1)
+                                DisabledFill: =RGBA(0, 0, 0, 0)
+                                FocusedBorderThickness: =4
+                                Height: =30
+                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                Icon: =Icon.Edit
+                                OnSelect: |-
+                                    =Navigate(NewList,Transition.None,{SelectID: ThisItem.ID,Select: ThisItem});If(ThisItem.DocumentStatus.Value = "Open",EditForm(Form1),ViewForm(Form1))
+                                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedFill: =RGBA(0, 0, 0, 0)
+                                Width: =70
+                                ZIndex: =7
+
+            Container26_1 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                FillPortions: =0
+                Height: =75
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: |
+                    =Parent.Width - 300
+                ZIndex: =4
+
+                Label1_9 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(3, 169, 107, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =15
+                    Text: ="รายการทั้งหมด (ทั้งหมด " & CountRows(Gallery1_1.AllItems) & " รายการ)" 
+                    Width: =100
+                    ZIndex: =1
+
+            Container10_2 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                Fill: =RGBA(3, 169, 107, 1)
+                FillPortions: =0
+                Height: =50
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.End
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =Parent.Width - 300
+                ZIndex: =5
+
+                Label3_6 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="หมายเลขเอกสาร"
+                    ZIndex: =1
+
+                Label3_7 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="สถานะเอกสาร"
+                    ZIndex: =2
+
+                Label3_8 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="วันที่ทำรายการ"
+                    ZIndex: =3
+
+                Label3_9 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="จำนวนเงิน"
+                    ZIndex: =4
+
+                Label3_10 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="ช่องทางการชำระ"
+                    ZIndex: =5
+
+                Label3_11 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FillPortions: =1
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =10
+                    Text: ="รายละเอียดการเบิก"
+                    ZIndex: =6
+
+                Container16_1 As groupContainer.verticalAutoLayoutContainer:
+                    FillPortions: =0
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =40
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =30
+                    ZIndex: =7
+
+            Container25_1 As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Center
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowY: =LayoutOverflow.Scroll
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: |
+                    =Parent.Width - 300
+                ZIndex: =6
+
+                "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    DelayItemLoading: =true
+                    Height: =200
+                    Items: =Search(Filter(ExpenseList,(VarUserRole <> "HR" And User().Email = 'Created By'.Email) Or VarUserRole = "HR",ExpenseType.Value = ComboBox3.Selected.Value Or IsBlank(ComboBox3.Selected.Value),BenefitGroup.Value = ComboBox3_1.Selected.Value Or IsBlank(ComboBox3_1.Selected.Value),DocumentStatus.Value <> "Complete"),TextInput1.Text,"DocNo_x002e_","Comment")
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =100
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplatePadding: =0
+                    TemplateSize: =50
+                    ZIndex: =1
+
+                    Container12_1 As groupContainer.horizontalAutoLayoutContainer:
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =Parent.TemplateHeight
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                        Label4_6 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FillPortions: =1
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Size: =10
+                            Text: =ThisItem.DocNo
+                            ZIndex: =1
+
+                        Label4_7 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FillPortions: =1
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Size: =10
+                            Text: =ThisItem.DocumentStatus.Value
+                            ZIndex: =2
+
+                        Label4_8 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FillPortions: =1
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Size: =10
+                            Text: |-
+                                =Text(ThisItem.Created,"dd/mm/yyyy hh:ss:mm น.")
+                            ZIndex: =3
+
+                        Label4_9 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FillPortions: =1
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Size: =10
+                            Text: |-
+                                =Text(ThisItem.Amount, "#,##")
+                            ZIndex: =4
+
+                        Label4_10 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FillPortions: =1
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Size: =10
+                            Text: =ThisItem.BenefitGroup.Value
+                            ZIndex: =5
+
+                        Label4_11 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FillPortions: =1
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Size: =10
+                            Text: =ThisItem.Comment
+                            ZIndex: =6
+
+                        Icon3_1 As icon.Edit:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            Color: =RGBA(73, 130, 5, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(220, 220, 220, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Height: =30
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            Icon: =Icon.Edit
+                            OnSelect: |-
+                                =Navigate(NewList,Transition.None,{SelectID: ThisItem.ID,Select: ThisItem,FM: "edit"});If(ThisItem.DocumentStatus.Value = "Open",EditForm(Form1),ViewForm(Form1))
+                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                            PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            Width: =70
+                            ZIndex: =7
+
+        ExportExcelContainer As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =50
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Visible: =false
+            ZIndex: =6
+
+            Label2 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Size: =13
+                Text: ="Export data to excel"
+                Width: =170
+                ZIndex: =1
+
+            Button3_1 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(3, 169, 107, 1)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+                PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Size: =15
+                Text: ="Export"
+                ZIndex: =2
+
+    HumbergerMenu_1 As HumbergerMenu:
+        Carlendar: |-
+            =Navigate(CalendarPage,ScreenTransition.None);UpdateContext({varHumbergerMenu:false});
+        Close: |-
+            =UpdateContext({varHumbergerMenu:false});
+        Create: |-
+            =// รับปีและเดือนปัจจุบัน
+            With(
+                {
+                    CurrentYearMonth: Text(
+                        varWorkDate,
+                        "yy"
+                    ) & Text(
+                        varWorkDate,
+                        "mm"
+                    ),
+                    LastBiddingCode: First(Filter(Sort(ExpenseList, DocNo, SortOrder.Descending), DocNo <> "")).DocNo
+                },// ตรวจสอบว่าโค้ดรหัสโปรเจคล่าสุดมีปีและเดือนเดียวกันกับปีและเดือนปัจจุบันหรือไม่ Last('ITE ProjectFollowUp').BiddingNo
+                //Notify(LastBiddingCode,NotificationType.Information);
+                If(
+                    Mid(
+                        LastBiddingCode,
+                        5,
+                        4
+                    ) = CurrentYearMonth,
+                // ถ้ามีปีและเดือนเดียวกัน ให้เพิ่มหมายเลขเอกสารขึ้น 1
+                    Set(
+                        NewDocCode,
+                        "CSPJ" & CurrentYearMonth & "-" & Text(
+                            Value(
+                                Right(
+                                    LastBiddingCode,
+                                    6
+                                )
+                            ) + 1,
+                            "000000"
+                        )
+                    ),
+                // ถ้าไม่มีปีและเดือนเดียวกัน ให้เริ่มหมายเลขเอกสารใหม่ที่ 000001
+                    Set(
+                        NewDocCode,
+                        "CSPJ" & CurrentYearMonth & "-000001"
+                    )
+                );
+            );
+            //Notify(NewDocCode,NotificationType.Information);
+            UpdateContext({varnewList:true});
+        ExpenList: |-
+            =Navigate(ExpenList,ScreenTransition.None);UpdateContext({varHumbergerMenu:false});
+        Height: =Parent.Height
+        HomePage: |-
+            =Navigate(HomeList,ScreenTransition.None);UpdateContext({varHumbergerMenu:false});
+        Page: ="Home"
+        Role: =If(LookUp(User,User.DisplayName = User().FullName).Role.Value = "User", "ผู้ใช้งานระบบ", LookUp(User,User.DisplayName = User().FullName).Role.Value)
+        UserMaster: |-
+            =If(LookUp(User,User.Email = User().Email).Level.Value = "Admin",Navigate(UserList,ScreenTransition.None);UpdateContext({varHumbergerMenu:false});,Notify("คุณไม่มีสิทธ์เข้าถึงหน้า Master Admin",NotificationType.Warning));
+        Visible: =varHumbergerMenu
+        Width: =Parent.Width
+        ZIndex: =2
+
+    cmpConfirmModal_1 As cmpConfirmModal:
+        Color: =RGBA(3, 169, 107, 1)
+        FontSize: =Switch(App.ActiveScreen.Size,1,22,2,20,20)
+        LeftBtnText: ="ยืนยัน"
+        OnCancel: |-
+            =UpdateContext({varnewList:false});
+        OnConfirm: |-
+            =EditForm(Form1);
+            Patch(ExpenseList,{DocNo: NewDocCode});
+            Refresh(ExpenseList);
+            Navigate(NewList,ScreenTransition.None,{SelectID: First(Filter(Sort(ExpenseList, ID, SortOrder.Descending), ID <> "")).ID});
+            UpdateContext({varnewList:false});
+        RightBtnText: ="ยกเลิก"
+        Subtitle: ="หากกดยืนยันระบบจะสร้างเลขเอกสารให้อัตโนมัติ"
+        Title: ="คุณยืนยันที่จะสร้างรายการเบิกค่าใช้จ่ายใช่หรือไม่"
+        Visible: =varnewList
+        ZIndex: =3
+
+    Loading_2 As Loading:
+        Visible: =showSpinner
+        ZIndex: =4
+
+    btnCheckScreen As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(73, 130, 5, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+        OnSelect: |-
+            =If(
+                !IsBlank(Param("targetScreen")) And !IsBlank(Param("targetId")),
+                UpdateContext({showSpinner: true});
+                Set(
+                    varTargetScreen,
+                    Param("targetScreen")
+                );
+                Set(
+                    varTargetId,
+                    Value(Param("targetId"))
+                );
+                If(
+                    !varParamUsed,
+                    Switch(
+                        varTargetScreen,
+                        "financePay",ViewForm(Form1_2);
+                        Navigate(
+                            FinanceEdit,
+                            ScreenTransition.Cover,
+                            {varFinanceID: varTargetId}
+                        ),
+                        "RequestExpen",
+                        Navigate(
+                            NewList,
+                            ScreenTransition.Cover,
+                            {SelectID: varTargetId}
+                        )
+                    )
+                );
+                Set(
+                    varParamUsed,
+                    true
+                );
+                
+            );
+            UpdateContext({showSpinner: false});
+        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: ="Button"
+        Visible: =false
+        X: =1206
+        Y: =5
+        ZIndex: =5
+

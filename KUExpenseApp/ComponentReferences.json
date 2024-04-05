@@ -1,0 +1,42 @@
+[
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 6,
+    "LibraryId": "b579bb76-8cf8-4e7f-a9b5-2c15ffe36d01",
+    "LibraryLogicalName": "qerp_quickerplibrary_d13e9",
+    "LibraryVersion": "2024-01-10T09:09:43Z",
+    "OriginalComponentDefinitionTemplateId": "52efe5b114ed41c09556163174693ae4",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2024-01-10T09:09:43.64+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "b579bb76-8cf8-4e7f-a9b5-2c15ffe36d01",
+    "LibraryLogicalName": "qerp_quickerplibrary_d13e9",
+    "LibraryVersion": "2024-01-10T09:09:43Z",
+    "OriginalComponentDefinitionTemplateId": "a15d90bad68a48b88874991eb921730e",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2024-01-10T09:09:43.64+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "b579bb76-8cf8-4e7f-a9b5-2c15ffe36d01",
+    "LibraryLogicalName": "qerp_quickerplibrary_d13e9",
+    "LibraryVersion": "2024-01-10T09:09:43Z",
+    "OriginalComponentDefinitionTemplateId": "adb3f277aa6f4c0db371d806f4bf0178",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2024-01-10T09:09:43.64+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "b579bb76-8cf8-4e7f-a9b5-2c15ffe36d01",
+    "LibraryLogicalName": "qerp_quickerplibrary_d13e9",
+    "LibraryVersion": "2024-01-10T09:09:43Z",
+    "OriginalComponentDefinitionTemplateId": "eeff2f5235524fc0a2c0f366fce617be",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2024-01-10T09:09:43.64+00:00"
+  }
+]
