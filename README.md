@@ -1,4 +1,4 @@
-KU Expense App <br>
+Expense Reimbursement Application <br>
 
 
 Power Apps Application URL <br>
